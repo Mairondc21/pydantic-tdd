@@ -15,6 +15,9 @@ mkdocstrings = {extras = ["crystal", "python"], version = "^0.26.1"}
 isort = "^5.13.2"
 black = "^24.10.0"
 pytest = "^8.3.3"
+pydantic = "^2.9.2"
+pandera = {extras = ["io"], version = "^0.20.4"}
+pandas = "^2.2.3"
 
 
 [build-system]
