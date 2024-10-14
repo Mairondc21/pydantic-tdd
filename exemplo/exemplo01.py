@@ -3,6 +3,7 @@ from typing import Tuple
 
 from pydantic import BaseModel, PositiveInt, validate_call
 
+
 class NumeroPositivo(BaseModel):
     numero: PositiveInt
 

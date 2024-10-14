@@ -1,13 +1,12 @@
-from pandas import Timestamp
 from pandera import DataFrameSchema, Column, Check, Index, MultiIndex
 
 schema = DataFrameSchema(
     columns={
-        "column1": Column(
+        "id_produto": Column(
             dtype="int64",
             checks=[
-                Check.greater_than_or_equal_to(min_value=5.0),
-                Check.less_than_or_equal_to(max_value=20.0),
+                Check.greater_than_or_equal_to(min_value=21.0),
+                Check.less_than_or_equal_to(max_value=30.0),
             ],
             nullable=False,
             unique=False,
@@ -17,7 +16,7 @@ schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "column2": Column(
+        "nome": Column(
             dtype="object",
             checks=None,
             nullable=False,
@@ -28,16 +27,37 @@ schema = DataFrameSchema(
             description=None,
             title=None,
         ),
-        "column3": Column(
-            dtype="datetime64[ns]",
+        "quantidade": Column(
+            dtype="int64",
             checks=[
-                Check.greater_than_or_equal_to(
-                    min_value=Timestamp("2010-01-01 00:00:00")
-                ),
-                Check.less_than_or_equal_to(
-                    max_value=Timestamp("2012-01-01 00:00:00")
-                ),
+                Check.greater_than_or_equal_to(min_value=20.0),
+                Check.less_than_or_equal_to(max_value=200.0),
             ],
+            nullable=False,
+            unique=False,
+            coerce=False,
+            required=True,
+            regex=False,
+            description=None,
+            title=None,
+        ),
+        "preco": Column(
+            dtype="float64",
+            checks=[
+                Check.greater_than_or_equal_to(min_value=5.0),
+                Check.less_than_or_equal_to(max_value=120.0),
+            ],
+            nullable=False,
+            unique=False,
+            coerce=False,
+            required=True,
+            regex=False,
+            description=None,
+            title=None,
+        ),
+        "categoria": Column(
+            dtype="object",
+            checks=None,
             nullable=False,
             unique=False,
             coerce=False,
@@ -52,7 +72,7 @@ schema = DataFrameSchema(
         dtype="int64",
         checks=[
             Check.greater_than_or_equal_to(min_value=0.0),
-            Check.less_than_or_equal_to(max_value=2.0),
+            Check.less_than_or_equal_to(max_value=9.0),
         ],
         nullable=False,
         coerce=False,

@@ -1,8 +1,6 @@
-# Welcome to MkDocs
+# Documentação - Data Quality
 
-Esse é minha documentação
-
-
+Para desenvolver o modelo, vamos montar a seguinte ETL
 ```mermaid
 graph TD;
     A[Configura Variáveis] --> B[Ler o Banco SQL];
@@ -14,4 +12,16 @@ graph TD;
     Y -->|Sucesso| D[Salvar no DuckDB];
 ```
 
+## Contrato de dados
 
+::: app.schema.ProdutoSchema
+
+## Transformação
+
+::: app.etl.extrair_do_sql
+
+::: app.etl.load_settings
+
+::: app.etl.transformar
+
+::: app.etl.load_to_duckdb
